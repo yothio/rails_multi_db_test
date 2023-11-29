@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   resources :posts
   resources :cards
+  # Post::ContentsControllerのindexアクションのルーティングを設定
+  namespace :post do
+    resources :contents, only: [:index]
+  end
+  # Card::ContentsControllerのindexアクションのルーティングを設定
+  namespace :card do
+    resources :contents, only: [:index]
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
