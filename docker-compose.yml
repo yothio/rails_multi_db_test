@@ -20,6 +20,9 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    environment:
+      DB_USER: root
+      DB_PASSWORD: password
 volumes:
   db1-data:
   bundle-data:
