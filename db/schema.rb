@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_164949) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_171139) do
   create_table "cards", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
