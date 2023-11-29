@@ -1,0 +1,2 @@
+class Post < RenewalRecord
+end
