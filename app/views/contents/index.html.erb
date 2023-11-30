@@ -1,5 +1,6 @@
 
 <% @contents.each do |content| %>
-  <%= content.title %>
-  <%= content.body %>
+  <% content.view_attributes.each do |key, value| %>
+    <p><%= key %>: <%= value %></p>
+  <% end %>
 <% end %>
