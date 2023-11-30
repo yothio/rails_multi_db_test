@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   resources :posts
   resources :cards
-  # Post::ContentsControllerのindexアクションのルーティングを設定
-  namespace :post do
-    resources :contents, only: [:index]
-  end
-  # Card::ContentsControllerのindexアクションのルーティングを設定
-  namespace :card do
+
+  scope '/:variable' do
     resources :contents, only: [:index]
   end
 
@@ -14,7 +10,7 @@ Rails.application.routes.draw do
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
   # root "posts#index"
